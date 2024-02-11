@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <title>CARD GAME</title>
+        <link rel="stylesheet" href="cars_style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <script>
+            var app = angular.module("myApp", []);
+    
+            app.controller("myCntrl", function ($scope) {
+                $scope.questionArray = [
+                    
+                    "Apple products are overpriced and overhyped.",
+                    "Snakes make great pets, people are just irrationally afraid of them.",
+                    " Rats actually make fantastic pets but get an undeserved bad reputation.",
+                    "Mosquitoes should go extinct because they don’t make any difference to the ecosystem.",
+                    "The Marvel Cinematic Universe movies are style over substance and mostly boring.",
+                    "Taylor Swift is hugely overrated ,her music is okay at best.",
+                    " Friends was never that funny it’s overhyped because of nostalgia.",
+                    "Most Anime animations are terrible.",
+                    "Sushi is overhyped. Raw fish shouldn’t be considered a delicacy.",
+                    "Skinny jeans squeeze your genitals for no good reason – baggy jeans are more comfortable.",
+                    "Skinny jeans don’t look flattering on men.",
+                    " False eyelashes look tacky on women.",
+                    "Socially conscious “woke” culture has gone too far and become a parody of itself.",
+                    "Modern feminists only want to take men down, they don’t want to cohabit.",
+                    "Celebrities who get into politics should keep their opinions to themselves.",
+                    "Award shows are completely out of touch and meaningless.",
+                    "Self-care culture often devolves into self-indulgence.",
+                    "Pretty privilege is real and should be omitted.",
+                    " The words “unpopular opinion” are overused.",
+                    "People are abusing mental illnesses as an excuse for everything.",
+                    "Would you rather watch a couple kiss for five minutes straight or watch a graphic sex scene with your parents?",
+                    "Would you rather never have an orgasm or never find true love?",
+                    "Would you rather have sex with a goat and no one finds out or not have sex with a goat but everyone thinks you did?",
+                    "Would you rather only be able to kiss one person for the rest of your life or kiss as many people as you want, but only once?",
+                    "Would you rather marry the most boring person you know or the most intense and demanding person you know?",
+                    "Would you rather watch your parents have sex every day for the rest of your life or join in once to stop it?",
+                    "Would you rather have to wear the same pad all day while on a heavy period OR wear no pad/tampon on a light flow?",
+                    "Would you rather only use mascara that's been shared with five other people OR use dirty makeup brushes that haven't been washed in a year?",
+                    "Would you rather have your parents walk in on you having sex in their bed OR show your parents your entire porn search history?",
+                    "Would you rather never be able to masturbate again OR not be able to eat solid foods again?",
+                    "Would you rather eat ice cream with ketchup OR a banana with ketchup?",
+                    "Would you rather dive into a pool of semen OR blood?",
+                    "Would you rather accidentally text a nude picture of yourself to your parents OR accidentally butt-dial them during sex, and then have to listen to the whole thing?",
+                    "Would you rather drink a pint of your worst enemy's pee while they look you in the eye OR eat a bowl of your own poop while everyone you've ever dated watches?",
+                    "Would you rather pop a juicy pimple OR pull out an ingrown hair?",
+                    "Would you rather eat pasta with ketchup OR carrots with Nutella?",
+                    "Would you rather eat eight people out in a row OR eat an octopus?",
+                    "Would you rather have sex with a hot celebrity, but never get to see their face and body OR have the greatest meal of your life and get diarrhea?",
+                    "Dogs aren't cute",
+                    "Waking up early is really cool",
+                    "Horoscopes are a joke",
+                    "Stranger Things is overrated",
+                    "Talking on the phone is better than texting",
+                    "Cigarette smoke actually smells really good",
+                    "Cold weather is better than warm weather",
+                    "Android is better than iPhone",
+                    "Cats are better than dogs",
+                    "Breaking up with someone via text is totally fine",
+                    "It should be socially acceptable to ask parents to quiet their loude crying child or at least take them to some place else",
+                    "qr code menus should be additin to the physical menus,not instead of them.",
+                    "taking a shower 2-3 times a week is perfectly fine",
+                    "Women sexualize men, as much as men sexualize women. ",
+                    "Clubbing is actuaally awful,it is full of pretntious people and over priced drinks",
+                    "Having inheritence is not compareable to luck ",
+                    "Ignoring texts on purpose is unacceptable to men but okay by women",
+                    "UNO is overrated and cheerless game.",
+                    "Watch how he treats his mother ,is a terrible dating advice for women",
+                    "Political ads should be banned from TV. Period.",
+                    "Money actually can buy happiness.",
+                    "You should learn the language of the places you travel.",
+                    "Social media makes people more politically extreme. ",
+                    "People can still be friends with their exes.",
+                    " Instagram makes everyone’s relationship look like a romantic novel. Behind the photos, everyone’s fighting.",
+                    "It’s ok to go through your partner’s phone.",
+                    "It’s possible to be in love with multiple people at once.",
+                    "Soulmates don’t exist.",
+                    "You don’t need a partner (or kids) to be happy.",
+                    "Paris is not the most romantic city in the world.",
+                    " Most people aren’t in love. They just don’t want to be alone.",
+                    "No one really “falls in love at first sight.”",
+                    "Cats are more fun to be around than dogs.",
+                    "Designer labels are a waste of money",
+                    "Good-looking people have more advantages in life.",
+                    "In Titanic, Jack could have fit on the door.",
+                    "Women do not belong in military",
+                    "Should women get pay in sports?",
+                    "Religion is full of crap",
+                    "There are only 2 genders",
+                    "Internet is basic human need",
+                    "Sharukh khan is over rated",
+                    "Would you rather be killed by a serial killer or have sex during periods",
+                    ""
+                ];
+    
+                $scope.currentQuestionIndex = 0;
+    
+                $scope.rotateCard = function () {
+                    var card = document.getElementById('card');
+                    card.classList.add('flipped');
+    
+                    setTimeout(function () {
+                        $scope.$apply(function () {
+                            card.classList.remove('flipped');
+                            $scope.currentQuestionIndex = Math.floor(Math.random() * $scope.questionArray.length);
+                        });
+                    }, 1000); // Adjust the time according to your transition duration
+                };
+            });
+        </script>
+    </head>
+    <body ng-app="myApp">
+        
+        <section id="header">
+            <h3>THE ROAD BLOCK GAME </h3>
+            <div>
+                
+                <button class="menu-icon">&#9776;</button>
+                <ul id="navbar">
+                    <li class="dropdown">
+                        <a href="#">&#9776;</a>
+                        <div class="dropdown-content">
+                            <a href="landing_page.html">Home</a>
+                            <a href="https://www.linkedin.com/in/omesh-singh-4a8142255/">About Me</a>
+                            <a href="https://www.linkedin.com/in/omesh-singh-4a8142255/">Contact Me</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="card-container" ng-controller="myCntrl">
+            <div id="card">
+                <div id="card-content">
+                    <h1>{{ questionArray[currentQuestionIndex] }}</h1>
+                    <br></br>
+                    <br></br>
+                    <span>
+                        <button class="button1">AGREE</button>
+                        <button class="button1">DISAGREE</button>
+                    </span>
+                    <br><br>
+                    <button ng-click="rotateCard()">NEXT QUESTION</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="bluestrip">
+                <br>
+                <br>
+                <h1  id="heading_custom1">&#x2665 LOVING THE GAME?</h1>
+                <br>
+                <br>
+                <h2>APPRECIATE MY WORK</h2>
+                <p>Appreciate my work on Linkedin</p>
+                    <a href="https://www.linkedin.com/in/omesh-singh-4a8142255/"><img src="data:image/png;base64,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" alt=""></a>
+                <div class="copyright">
+                    <p>2023 ,VAliantDragon174 -etc HTML CSS Ecommerce Template</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
