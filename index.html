@@ -11,7 +11,7 @@
                 $scope.confirmed = false;
                 $scope.beginGame = function() {
                     if (!$scope.confirmed) {
-                        window.location.href = 'card.html'
+                        window.location.href = 'landing_page.html'
                         alert("You are confirming that you agree with the rules of the game and procedding on your own choice FAIR WARNING:THE GAME CAN BE OFFENSIVE!")
                     }
                     else{
@@ -47,7 +47,7 @@
                     <h1><i class="fas fa-road">WELCOME <i class="fas fa-walking"></i>
                         TO THE
                         ROADBLOCK!</i></h1>
-                    <br></br>
+                    <br>
                     <h3>---------------- RULES ----------------</h3>
                     <br>
                     <div>
@@ -60,9 +60,8 @@
                         <li>The players have to provide explaination for their decision.</li>
                         <li>That's it Enjoy the game!</li>
                     </ul>
-                    <br><br>
-                    <input type="checkbox" ng-model="confirmed"> I hereby confirm that I am aged 18 or above and have chosen to play this game voluntarily. I acknowledge that the game creator holds no responsibility for the consequences of my actions and the nature of the questions presented in the game.</span></div>
                     <br>
+                    <input type="checkbox" ng-model="confirmed"> I hereby confirm that I am aged 18 or above and have chosen to play this game voluntarily. I acknowledge that the game creator holds no responsibility for the consequences of my actions and the nature of the questions presented in the game.</span></div>
                     <br>
                     <br>
                     <button  ng-click="beginGame()"><a href="card.html">READY TO BEGIN</a></button>
@@ -75,7 +74,6 @@
                 <br>
                 <br>
                 <h1  id="heading_custom1">&#x2665 LOVING THE GAME?</h1>
-                <br>
                 <br>
                 <h2>APPRECIATE MY WORK</h2>
                 <p>Appreciate my work on Linkedin</p>
