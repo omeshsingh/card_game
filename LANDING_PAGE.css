@@ -5,8 +5,8 @@
     font-family: 'Spartan' ,sans-serif;
 }
  h1{
-    font-size: 50px;
-    line-height: 64px;
+    font-size: 6.6vr;
+    line-height: 6.6vr;
     color:#222;
  }
  h2{
@@ -55,7 +55,7 @@ margin: 40px 0;
 #header h3{
     color: rgb(255, 251, 0);
     text-align: left;
-    font-size: 40px;
+    font-size: 5vw;
     font-weight: bold;
 }
 
@@ -75,7 +75,7 @@ margin: 40px 0;
 
 #navbar a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.65vh;
     font-weight: 600;
     color: rgb(255, 251, 0);
 }
@@ -150,8 +150,8 @@ margin: 40px 0;
     margin: 15px 0;
 }
 #card-container {
-    width: 80%;
-    height: 66%;
+    width: 70vw;
+    height: 120vw;
     position: absolute;
     top: 40%;
     left: 50%;
@@ -203,6 +203,7 @@ margin: 40px 0;
     font-weight: bold;
     text-align: center;
 }
+
 #card div{
     color: rgb(255, 251, 0);
     padding-left: 35px;
